@@ -1,4 +1,4 @@
 {
-  "files.insertFinalNewline": false,
+  "files.insertFinalNewline": true,
   "C_Cpp.default.cppStandard": "c++20"
 }
