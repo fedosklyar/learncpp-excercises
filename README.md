@@ -8,10 +8,11 @@
 2. **A Code Showcase:** Demonstrating clean code practices, multi-file project setups, and third-party library integrations (e.g., JSON handling, graphics, etc.). --- 
 
 ## Progress Index & Table of Contents 
-| Chapter / Section | Topic / Focus | Key Concepts & Projects                                                      | Status      | Link                        |     |
-| :---------------- | :------------ | :--------------------------------------------------------------------------- | :---------- | :-------------------------- | --- |
-| **Chapter 0**     | Introduction  | Basic setup, hello world, configuration, printing + simple reading from json | Completed   | [Folder](0%20Introduction/) |     |
-| **Chapter 1**     | C++ Basics    | Objects, variables, syntax, iostream                                         | In Progress | [Folder](1%20C++%20Basics/) |     |
+| Chapter / Section | Topic / Focus       | Key Concepts & Projects                                                      | Status    | Link                                   |     |
+| :---------------- | :------------------ | :--------------------------------------------------------------------------- | :-------- | :------------------------------------- | --- |
+| **Chapter 0**     | Introduction        | Basic setup, hello world, configuration, printing + simple reading from json | Completed | [Folder](0%20Introduction/)            |     |
+| **Chapter 1**     | C++ Basics          | Objects, variables, syntax, iostream, expressions, simple calculator         | Completed | [Folder](1%20C++%20Basics/)            |     |
+| **Chapter 2**     | Functions and Files | Functions, files                                                             | To begin  | [Folder](2%20Functions%20and%20Files/) |     |
 
 *(This table will be updated incrementally as each chapter and project is completed).* 
 
