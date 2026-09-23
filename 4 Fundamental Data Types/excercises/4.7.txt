@@ -1,0 +1,13 @@
+Here we had the material on scientific notation and the task of converting some numbers
+according to the rules of this notation. we need to specify the significant part of the number
+along with the power of 10 using ('e') 
+
+1) 34.50 = 3.450e1              with 4 significant
+2) 0.004000 = 4.000e-3          with 4 significant
+3) 123.005 = 1.23005e2          with 6 significant
+4) 146000 = 1.46e5              with 3 significant
+5) 146000.001 = 1.46000001e5    with 9 significant
+6) 0.0000000008 = 8e-10         with 1 significant
+7) 34500.0 = 3.45000e4          with 6 significant
+8) 146000 = 1.46000e5           with 6 significant
+
