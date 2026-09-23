@@ -43,10 +43,3 @@ void displayInScientificNotation(double value)
     std::cout << ePower << "\n";
 } 
 
-// double getDoubleFromConsole()
-// {
-//     double input;
-//     std::cout << "Enter the value: ";
-//     std::cin >> input;
-//     return input;
-// }

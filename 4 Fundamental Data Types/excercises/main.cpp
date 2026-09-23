@@ -40,13 +40,10 @@ int main()
     //allow to enter true and false for 'bool'
     std::cin >> std::boolalpha;
 
-    //Try new boolean
-    //We are getting the leftover from the buffer upon the requst at this point
     b = enterBoolean();
     std::cout << "The value after change of display: " << b << "\n";
 
     std::cout << "==============================Actual tasks part==============================" << "\n";
-    
     
     clearInputBuffer();
 
