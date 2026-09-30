@@ -7,6 +7,7 @@ void transformToScientificNotation(std::string_view value)
     //For now we will assume, that the value is the correct double
     int power {};
     int significant {};
+    bool isNegative = false;
     //bool avoidFrontZeros = true; 
 
     //Decide, whether the |value| > 1 or not
@@ -14,6 +15,15 @@ void transformToScientificNotation(std::string_view value)
 
     //Should I assess the case for the number, which already satisfies the scientific notation?
     //which is in the range of [1; 10)
+
+    //Firstly, we check the value for being negative
+    //If it is so, we store the info about that and getting rid of the '-' sign
+    //We will simply display it in the end after the whole processing
+    if(value[0] == '-')
+    {
+        isNegative = true;
+        value.remove_prefix(1);
+    }
 
     //For the correct double, if the 1st symbol is 0 
     //We ignore the zeros before the first natural; get rid of them
@@ -42,7 +52,7 @@ void transformToScientificNotation(std::string_view value)
         //if we have the one-digit value in the end, there is no '.' to add
         if(value.length() == 1)
         {
-            displayInScientificNotation(value, significant, power);
+            displayInScientificNotation(value, significant, power, isNegative);
             return;
         }
 
@@ -50,7 +60,7 @@ void transformToScientificNotation(std::string_view value)
         //The dot is the 2nd character 
         scientific.insert(1, ".");
 
-        displayInScientificNotation(scientific, significant, power);
+        displayInScientificNotation(scientific, significant, power, isNegative);
     }
 
     //We have the [value] > 1, which means, there is no 0s in front to ignore
@@ -89,15 +99,20 @@ void transformToScientificNotation(std::string_view value)
         //put the dot back or create it
         stringToModify.insert(1, ".");
 
-        displayInScientificNotation(stringToModify, significant, power);
+        displayInScientificNotation(stringToModify, significant, power, isNegative);
     }
     
 }
 
 
-void displayInScientificNotation(std::string_view value, int significant, int power)
+void displayInScientificNotation(std::string_view value, int significant, int power, bool isNegative)
 {
-    std::cout   << "The value is scentific notation is: "
-                << value << "e" << power <<"\n"
+    std::cout   << "The value in scentific notation is: ";
+
+    //Display the '-' sign, if the value is negative
+    if(isNegative)
+        std::cout << "-";
+
+    std::cout   << value << "e" << power <<"\n"
                 <<"The significant part is: " << significant << "\n"; 
 }
