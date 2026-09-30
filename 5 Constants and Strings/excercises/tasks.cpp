@@ -1,21 +1,6 @@
 #include <iostream> //Should I include it here or in the header?
+#include <helpers.h>
 #include "tasks.h"
-
-std::string getTheStringFromConsole(std::string_view message)
-{
-    std::string input;
-    std::cout << message;
-    std::getline (std::cin >> std::ws, input);
-    return input; 
-}
-
-int getIntFromConsole(std::string_view message)
-{
-    int input {};
-    std::cout << message;
-    std::cin >> input;
-    return input;
-}
 
 void nameLengthAndAgeTask()
 {   
@@ -24,7 +9,7 @@ void nameLengthAndAgeTask()
     //upon call to the 'name' object 
     // std::string_view name {getTheStringFromConsole("Enter your full name: ")};
 
-    std::string name {getTheStringFromConsole("Enter your full name: ")};
+    std::string name {getStringFromConsole("Enter your full name: ")};
     int age {getIntFromConsole("Enter your age: ")};
     std::cout << "Your age + length of name is: " << age + static_cast<int>(name.length()) << "\n"; 
 }
@@ -32,11 +17,11 @@ void nameLengthAndAgeTask()
 void defineTheOlderOfTwo()
 {
     //the 1st person
-    std::string firstPerson {getTheStringFromConsole("Enter the name of person #1: ")};
+    std::string firstPerson {getStringFromConsole("Enter the name of person #1: ")};
     int ageFirst {getIntFromConsole("Enter the age of " + firstPerson + ": ")};
 
     //the 2nd person
-    std::string secondPerson {getTheStringFromConsole("Enter the name of person #2: ")};
+    std::string secondPerson {getStringFromConsole("Enter the name of person #2: ")};
     int ageSecond {getIntFromConsole("Enter the age of " + secondPerson + ": ")};
 
     if(ageFirst > ageSecond)
