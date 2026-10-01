@@ -91,7 +91,26 @@ void transformToScientificNotation(std::string_view value)
         }
         else
         {
-            power = static_cast<int>(stringToModify.length() - 1);
+            power = static_cast<int>(value.length() - 1);
+            
+            //Let's get rid of potential trailing zeros
+            size_t last = value.length() - 1;
+
+            while(value[last] == '0')
+            {
+                //get rid of '0' and update the last_index
+                value.remove_suffix(1);
+                last = value.length() - 1;
+            }
+
+            if(value.length() == 1)
+            {
+                //The significant is guaranteed to be 1
+                displayInScientificNotation(value, 1, power, isNegative);
+                return;
+            }
+
+            stringToModify = value;
         }
         
         significant = static_cast<int>(stringToModify.length());
