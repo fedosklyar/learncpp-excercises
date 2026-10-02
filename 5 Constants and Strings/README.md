@@ -1,0 +1,15 @@
+# Chapter 5: Constants and Strings
+
+This directory contains the solutions to the practical questions, given throughout the chapter. Along with that, the modifications for the "Simple calculator" and "Scientific notation" programs are given and the module with the custom helper functions is provided.
+
+## What the Programs Demonstrate
+* **The usage of strings:** Here we make use of both `std::string` and `std::string_view` types in order to work with the collections of the characters. The choice of the type depends on the details of the particular case.
+* **The custom `heplers` module:** Since in all of the chapters there are some functions (primarily for getting the input from the console) which are used constantly, they were organized under the pair of `helpers.h` and `helpers.cpp` files and placed under the `include` directory in order to be reused across the exercises. Currently there is only a local copy for this chapter specifically, but in the future I plan to put it in the root directory in order to not be copied for each chapter and serve it's purpose as supposed to.
+* **"Scientific notation" modifications:** In the [previous chapter](4%20Fundamental%20Data%20Types/) the program, which converts the decimal number to the scientific presentation was introduced. The main flaw of it is that it is incapable of preserving the additional zeros in the fractional part in the end, since they are considered redundant for the computational purposes. It led to the inability to determine the value of the significant part of the scientifically presented value correctly. To address the issue, the alternative solution was implemented, which makes use of the string approach, which imitates a more real way of how the human converts a number to this notation, thus, allowing to keep the trailing zeros and determine the significant correctly.
+* **"Simple calculator" modifications:** The simple calculator application was modified so that now it allows to enter the whole expression, including the operation and operands. While the set of the operations is quite limited, it still imitates the real-world applications much more precisely then the precedent version.
+## Configuration & Dependencies
+- The `.vscode` file with properly structured configuration can be located under [.vscode Folder](../0%20Introduction/.vscode) in the Introductory chapter.
+## Prerequisites & Local Setup 
+- The same as described in the [Introductory README](../0%20Introduction/README.md##-prerequisites--local-setup)
+- In order for the multiple-file project to compile, all the .cpp files should be provided to the "args" key of the `tasks.json` file in the format `"${fileDirname}\\fileName.cpp"`.
+- For the `helpers` module to be included, the reference to the respective folder should be made, which is described in the [Introductory README](../0%20Introduction/README.md)
