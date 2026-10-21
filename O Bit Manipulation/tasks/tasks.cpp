@@ -76,3 +76,44 @@ void articleTask()
 
     std::cout << "The final value is: " << std::bitset<8>{ myArticleFlags } << '\n';
 }
+
+int getIntToConvertToBinary()
+{
+    std::cout << "Enter the value to convert to binary (0;255): ";
+    int value {};
+    std::cin >> value;
+    return value;
+}
+
+void printDecimalAsBinary(int decimal)
+{
+    printBit(decimal, 128);
+    printBit(decimal, 64);
+    printBit(decimal, 32);
+    printBit(decimal, 16);
+    std::cout << " ";
+    printBit(decimal, 8);
+    printBit(decimal, 4);
+    printBit(decimal, 2);
+    printBit(decimal, 1);
+}
+
+void printBit(int decimal, int powerOfTwo)
+{
+    int result = decimal / powerOfTwo;
+    
+    std::cout << result % 2; 
+}
+
+void convertIntToBinary()
+{
+    int decimal {getIntToConvertToBinary()};
+
+    if(decimal > 0 && decimal > 255)
+    {
+        std::cout << "You entered a wrong value";
+        return;
+    }
+
+    printDecimalAsBinary(decimal);
+}
